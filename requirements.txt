@@ -1,0 +1,4 @@
+# additional python requirements
+
+jupyterlab
+
