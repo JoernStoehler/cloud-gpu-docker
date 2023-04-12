@@ -12,6 +12,15 @@ RUN apt-get update && apt-get install -y \
     rsync \
     inotify-tools
 
+# install vscode-server
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+RUN code-server \
+        --install-extension ms-python.python \
+        --install-extension ms-toolsai.jupyter \
+        --install-extension eamodio.gitlens
+        # --install-extension ms-python.vscode-pylance # cannot find
+        # --install-extension GitHub.copilot # cannot find
+
 # install python packages
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
