@@ -10,7 +10,10 @@ FROM pytorch/pytorch:latest
 RUN apt-get update && apt-get install -y \
     openssh-server \
     rsync \
-    inotify-tools
+    inotify-tools \
+    curl \
+    wget \
+    nano 
 
 # install vscode-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
